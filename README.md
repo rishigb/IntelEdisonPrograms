@@ -10,4 +10,7 @@ Use the following links to get started:
 3. http://iotdk.intel.com/docs/master/mraa/python/
 
 
+For using the same code for working with LCD , you will need to build some files from here: https://github.com/intel-iot-devkit/upm/tree/master/src/lcd , recently, the process appears to have changed and I have not been able to build these in the new edison I am working with. Will keep you posted on other developments.
+
+
 I am trying to keep the code clean, in case there are any doubts or any explanation is needed, feel free to get in touch.

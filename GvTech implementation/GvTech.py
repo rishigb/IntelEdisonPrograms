@@ -65,6 +65,6 @@ while True:
     if val != None:
         s = getSerialCommand(val)
 
-lcdValprint("Controlling Lights")
+
 
 
