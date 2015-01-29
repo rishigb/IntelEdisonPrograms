@@ -1,0 +1,40 @@
+So first off, use the following commands to get wifi up and running. I am using Yocto Linux itself so have written the instructions accordingly.
+
+$ configure_edison --wifi 
+
+You will be prompted to chose a network after the scanning of the networks in completed. Chose the network, provide the details and you are done. FYI at work I have a WEP type connection and the above command works like a charm to get connected in this network too :)
+
+You should be given a link to like this http://10.93.*.* or http://edison.local which you can check in your browser. In case that is not what you get, your wifi connection has not been established.
+
+On getting connected, you should straight away try this:
+
+$ ping www.google.com
+
+You should get the response from the website and you should get something like this, "64 bytes from 173.**.**.**: seq=0 ttl=52 time=74.817 ms" , congratulations, you are connected to the internet.
+
+In case you are not able to ping, and error thrown out at you says "bad address" , do the following:
+1. Repeat the above process and check if the connection has been established using "wpa_cli status"
+2. If it shows connected, the reason why it was showing a bad address is because it can't resolve the address, for this :
+$ vi /etc/resolv_conf
+
+press i to get in insert mode , write this:
+nameserver 8.8.8.8 
+ esc + : + wq (hit enter)
+
+This will resolve the problem and viola, you are connected to the internet.
+
+In case while executing the above command you find out that you are not able to save the file, the reason is simple, your edison's memory has been clogged. Now this is an interesting case because now you will have to clean out the device. 
+
+Go out back to your edison terminal and find out the free space:
+$ df
+
+Check out the available space, if this shows 0%, you will have to remove all the old logs and un-necessary modules. 
+Go to the root using this : $ cd / 
+Check the space using this:$ du-h|sort 
+Now look at the logs section, you don't need these, you can remove them, this also applies to the modules that could be taking too much space.
+Remove using 
+$rm -rf filename
+
+Once done will all this repeat the process to get wifi up and running.
+Space issues will pop up every now and then, hence for testing your code, do use a memory card. Access it using 
+$ cd /media/sdcard 
