@@ -1,17 +1,5 @@
 /*****************************************************************************************App by RISHI GAURAV BHATNAGAR******************************************************************************************************/
 
-// Wait for Cordova to load
-/*document.addEventListener("deviceready", onDeviceReady, false);
-//This part is working
-// Cordova is ready
-var devReady = false;
-/**********************************************************************************************Functions used in the code ****************************************************************************************************/
-/*function onDeviceReady() {
-    //this part is also working
-    });
-    devReady = true;
-}
-*/
 /**********************************************************************************************Functions used in the code ****************************************************************************************************/
 var flag_ques1 = 0;
 var flag_ques2 = 0;
@@ -29,7 +17,7 @@ Write all your functions related to the HTML tags here
 function recievedevent(id) {
     $.ajax({
         //url:"http://localhost:3000",
-        url: "https://lit-caverns-9397.herokuapp.com/",
+        url: "https://lit-caverns-9397.herokuapp.com/", // Add the link to your own cloud server app here or just use localhost to post things.
         type: 'GET',
         success: recall
     })
