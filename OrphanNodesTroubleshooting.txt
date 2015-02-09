@@ -1,0 +1,13 @@
+Troubleshooting corrupted file system :
+
+You could see this problem occurring a lot of time. This happens when the node becomes orphan because some process that was running in the parent node was not exited. This happens a lot sometimes, depending on how you are using your processor. 
+
+To sort this out do the following :
+umount /dev/mmcblk0p8   — This points to the node that is corrupted/orphaned. Could be different in your case. It might or might not execute, don’t worry about it.
+e2fsck /dev/mmcblk0p8  — There will be a couple of questions while remounting the device, do press ‘y’ to get things going
+
+reboot — To get the disk back to working.
+ 
+
+
+This process will take care of everything and your edison should work like a charm again!
