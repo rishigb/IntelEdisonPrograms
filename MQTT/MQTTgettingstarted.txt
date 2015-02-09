@@ -4,3 +4,5 @@ So to start with, MQTT can be installed by the instructions given here: http://m
 
 This is where you should start, it has everything you need to know to start using it:
 https://2lemetry.atlassian.net/wiki/display/KB/Connecting+to+ThingFabric+in+Python
+
+Those who plan to use 2lemetry and follow the proces for the same, please make a note of the fact that the publish /subcribe topics given on the tools sections are the ones you have to use too. You will not have permissions to use the other topics yet, there is a process involved to make it work which I am yet to figure out.
