@@ -1,3 +1,6 @@
 So I have heard alot about MQTT and CoAp in the past couple of days, so I thought I would give it a shot and write a simple application using the same.
 
 So to start with, MQTT can be installed by the instructions given here: http://mosquitto.org/download/
+
+This is where you should start, it has everything you need to know to start using it:
+https://2lemetry.atlassian.net/wiki/display/KB/Connecting+to+ThingFabric+in+Python
