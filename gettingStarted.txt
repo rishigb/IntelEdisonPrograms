@@ -2,7 +2,7 @@ Hey everyone, this is going to be a step by step process on getting started with
 
 After unpacking the edison and fixing it up on the board, connect it to the system and log in either serially or using ssh. 
 
-Loggin in serially :
+1.Log-in serially :
 1. Connect both the USB ports to your system, the one near the USB female port input is the one which is going to power up the system, the one on the extreme end is going to be your way in to the Yocto Linux. How ever, I would recommend you to connect the input from a power adapted and not connect the inner usb port for power.
 
 We will be using 'screen' command to login.
@@ -69,7 +69,12 @@ Basic commands you should know to make your life easy :
 5. Shutdown: $ shutdown
 6. Code using vi : $ vi nameofFile.filetype  example vi python.py 
 7. Delete the file: $ rm nameofFile or rm -rf nameoffile or rm nameofFOlder
-8.
+8. Go to the previous working directory : $ cd /
+9. Find out space in your edison : $ df -h
+10. To delete old logs to free some memory: $ rm /var/log/journal/ -- This will clean up the old logs
+11. Vi commands : Open a document - $ vi nameofFile.extenstionofFile
+				 Edit the document - $ vi nameofFile.extenstion , press i after that, to delete a line esc + dd , to save a file esc + wq , to not save a file esc + q! 
+
 
 ###############################################################Using Arduino IDE with edison #########################################################################
 
