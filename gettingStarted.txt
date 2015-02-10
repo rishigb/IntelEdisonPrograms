@@ -71,9 +71,16 @@ Basic commands you should know to make your life easy :
 7. Delete the file: $ rm nameofFile or rm -rf nameoffile or rm nameofFOlder
 8. Go to the previous working directory : $ cd /
 9. Find out space in your edison : $ df -h
-10. To delete old logs to free some memory: $ rm /var/log/journal/ -- This will clean up the old logs
+10. To delete old logs to free some memory: $ cd /var/log/journal/ 
+											$ rm -rf * -- This will clean up the old logs
 11. Vi commands : Open a document - $ vi nameofFile.extenstionofFile
 				 Edit the document - $ vi nameofFile.extenstion , press i after that, to delete a line esc + dd , to save a file esc + wq , to not save a file esc + q! 
+12. Clear the screen : $ clear
+
+
+
+Basic examples have been included in BasicExamples folder, I use it as a reference all the time. Thanks to Brendan Le Foll for putting these up!
+
 
 
 ###############################################################Using Arduino IDE with edison #########################################################################
