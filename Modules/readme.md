@@ -14,6 +14,16 @@ curl -OL https://pypi.python.org/packages/source/p/paho-mqtt/paho-mqtt-1.1.tar.g
 same as above to unpack
 
 
+3. Mraa/Upma 
+
+echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic" > /etc/opkg/mraa-upm.conf
+opkg update
+opkg install libmraa0
+
+
+
+
+
 To install cd nameOfFile
 
 python setup.py install 

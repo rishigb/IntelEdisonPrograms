@@ -1,0 +1,79 @@
+Hey everyone, this is going to be a step by step process on getting started with Intel Edison (Thanks to Intel for giving one to me at IOT Roadshow here in Bangalore). This one is going to be specifically for the Linux/ Mac users. 
+
+After unpacking the edison and fixing it up on the board, connect it to the system and log in either serially or using ssh. 
+
+Loggin in serially :
+1. Connect both the USB ports to your system, the one near the USB female port input is the one which is going to power up the system, the one on the extreme end is going to be your way in to the Yocto Linux. How ever, I would recommend you to connect the input from a power adapted and not connect the inner usb port for power.
+
+We will be using 'screen' command to login.
+Go to serial terminal and type the following:
+$ screen /dev/tty.usb (presstab) 115200 -L  #This will help you get in the login screen, But after the command, press ENTER twice. You will get a login screen. In case you are not able to get in, it is because maybe another serial window is open. I'll tell you how to close it in the troubleshooting methods
+
+If it a new board, your login would be edison/root and you should be in. If it is the board you have logged in before, you will have to input the username and password. If you are all set and in , you will see something like this:
+
+root@edison:~#
+
+If you have logged in for the first time, please set a password,
+$ passwd
+
+You will be prompted to input the new password and confirm it by inputting it again, also yocto is not going to show the password while you are typing it, don't worry about that.
+
+2. Connecting it to the internet using Wifi :
+
+This is a very interesting part, could be a little tricky sometimes, to connect, type the following:
+$ configure_edison --wifi 
+
+The edison is going to scan the network and give you options, follow along and you will be able to connect to the wifi. You should see something like this:
+
+"Done. Please connect your laptop or PC to the same network as this device and go to http://10.**.**.*** or http://edison.local in your browser.
+Warning: SSH is not yet enabled on the wireless interface. To enable SSH access to this device via wireless run configure_edison --password first"
+
+To see if the internet is working, use the ping command :
+$ ping www.google.com 
+
+If you see something like this: 
+"64 bytes from 74.125.236.177: seq=27 ttl=53 time=59.011 ms"
+
+You have been connected to the internet, if you don't see that or if you see bad address , there are two possibilities, either internet has not been connected or resolv.conf file needs to be edited. For more information on this please check the wifi troubleshooting doc .
+
+
+3. Install dependencies /modules for python,node etc :
+
+The most important dependency is Mraa/Upma which is a low level C++ skeleton for the device, more about it here : https://github.com/intel-iot-devkit/mraa
+
+To install it ,
+
+$ echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic" > /etc/opkg/mraa-upm.conf
+$ opkg update
+$ opkg install libmraa0
+
+
+To test it in python, do the following :
+$ python  
+This should open up python 2.7 that comes pre-installed with the edison (I know I love it too!)
+
+import mraa #Press enter after this, is there is no error/response about no module present, you are good to go, otherwise this has not been installed, repeat the above process for the same.
+
+More on how to install the modules is written in the Modules folder. 
+
+
+So, by far all the things have been setup and edison is up and running.
+
+Please add an external Memory card and save all your code there, since as I have mentioned before in other documents, there are memory limitations in the 'root' sections and that could cause various issues from memory corruption to not being able to connect to the internet. 
+
+Basic commands you should know to make your life easy :
+1. Make a directory : $ mkdir nameFolder
+2. Get into a folder :$ cd nameFolder
+3. Get out of a folder : $ cd ..
+4. Reboot : $ reboot
+5. Shutdown: $ shutdown
+6. Code using vi : $ vi nameofFile.filetype  example vi python.py 
+7. Delete the file: $ rm nameofFile or rm -rf nameoffile or rm nameofFOlder
+8.
+
+###############################################################Using Arduino IDE with edison #########################################################################
+
+For using the arduino IDE , you do not have to follow any of the above mentioned process, the IDE for both edison and galileo is not the conventional IDE, it has to be downloaded from here : https://communities.intel.com/docs/DOC-23242 
+
+For uploading the code you have to use the USB input which is present towards the power input (not the one on extreme end). You have to go to the Arduino IDE and chose the board, to test a basic example, go to the example section, hit upload and you are done.
+This however has its limitations, I found out that a lot of libraries did not work and that I think is because the IDE is converting all the input code to what the board understands and there are some issues with the IDE. But please do test it yourself and let me know if all the libraries are working for you.
