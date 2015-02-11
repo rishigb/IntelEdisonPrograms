@@ -89,3 +89,19 @@ For using the arduino IDE , you do not have to follow any of the above mentioned
 
 For uploading the code you have to use the USB input which is present towards the power input (not the one on extreme end). You have to go to the Arduino IDE and chose the board, to test a basic example, go to the example section, hit upload and you are done.
 This however has its limitations, I found out that a lot of libraries did not work and that I think is because the IDE is converting all the input code to what the board understands and there are some issues with the IDE. But please do test it yourself and let me know if all the libraries are working for you.
+
+
+
+###########Trouble Shooting################################################################################################
+If the Edison develops the below problem while using Using the 'screen' command in terminal. A.k.a. you get the error "cannot open line '/dev/tty.usbserial' for R/W: resource busy".
+
+From terminal, run:
+lsof | grep usbserial
+ 
+If the port is in use, you will get a response like this (otherwise it will return nothing):
+screen    27127 Sefi    5u     CHR               18,0        0t0       605 /dev/tty.usbserial
+ 
+Note the session number. In my case, it's 27127. Then run:
+screen -x 27127 (obviously use your session number from the grep)
+ 
+It will return you to your previous screen session. Then use ctr-A ctr-\ to close it properly (will ask you to confirm).
