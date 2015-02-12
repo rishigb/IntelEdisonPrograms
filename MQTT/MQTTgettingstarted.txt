@@ -16,10 +16,40 @@ So the basic example that has been provided by PubNub was just tested. Here the 
 
 
 Warning:
-You need a local broker moquitto in my case to test things , generate your own keys, username etc. If you are just planning to use mqtt for testing purpose ,you can use the one provided by PUBNUB. Since I did not want to expose data, I am trying to install mosquitto on my MAC device.
-MAC OS X for some reason was not able to run the moquitto broker, it works fine on windows for now. You need to run the broker locally so that most of work can be done and tested at all times without exposing your data to an external entity.
+You need a local broker moquitto in my case to test things , generate your own keys, username etc. If you are just planning to use mqtt for testing purpose ,you can use the one provided by PUBNUB. Since I did not want to expose data, I am trying to install mosquitto on my MAC device. If I can test this, I should be able to figure out how to host my own mosquitto server on the cloud and make it work, lets see where that goes.
+
+#MAC OS X for some reason was not able to run the moquitto broker, it works fine on windows for now. You need to run the broker locally so that most of work can be done and tested at all times without exposing your data to an external entity.# -- Sorted
+
+Update: - Thanks to Ajith N N , I was able to make it work in macos too, I wasn't able to find the broker at all, here is how to find it :
+
+$ cd usr/local/cellar/mosquitto/1.3.4_1/sbin    This is where you should find the broker. 
+
+Next step is run it, how you work it is easy , 
+$ ./mosquitto  This is going to be the server/broker that takes care of the publish and subscribe commands.
+
+"1423743581: mosquitto version 1.3.4 (build date 2014-08-25 10:27:11+0100) starting
+1423743581: Using default config.
+1423743581: Opening ipv4 listen socket on port 1883.
+1423743581: Opening ipv6 listen socket on port 1883."
+
+Subscibe Command: Open another teminal window/tab and run the following command
+
+$ mosquitto_sub -h localhost -t "Rishi" 
+
+Here is how it should look like :
+
+$ mosquitto_sub -h localhost/serveraddress with port number -t "NameofTopic"
+
+Publish Command - Open a third terminal/tab and run the following command
+
+$ mosquitto_pub -h localhost -t "Rishi" -m "I am Here" 
+
+Here is how it should look like:
+
+$ mosquitto_sub -h localhost/serveraddress with port number -t "NameofTopic" -m "MessageYouwanttoPublish"
+
+The above is the very basics of how it works, on running the above you should see a messgae being updating on the subscribe side, this will be the same message you published. You have to be very careful about the name of topic you are subscibing to. It should all work out perfectly now!
 
 If your network does not allow HTTPS connections for some reason specially at workplaces, I would request you to connected your edison to some other network to test the publish and subscribe functions.
 
-##Update ##
-Going to try installing the broker on edison and test if I can run it all locally will keep you updated on that.
+
