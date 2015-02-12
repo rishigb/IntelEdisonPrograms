@@ -6,3 +6,10 @@ This is where you should start, it has everything you need to know to start usin
 https://2lemetry.atlassian.net/wiki/display/KB/Connecting+to+ThingFabric+in+Python
 
 Those who plan to use 2lemetry and follow the proces for the same, please make a note of the fact that the publish /subcribe topics given on the tools sections are the ones you have to use too. You will not have permissions to use the other topics yet, there is a process involved to make it work which I am yet to figure out.
+
+So I had successfully made the things work using intel edison and the 2lemetry broker, wanted to find out how to use the data and send it to a server , so I will be experimenting with Heroku right now, loves these guys! : https://devcenter.heroku.com/articles/cloudmqtt#using-with-python
+
+######################## With Pubnub #################
+So the basic example that has been provided by PubNub was just tested. Here the publish/subscribe keys have been generated using Mosquitto (I think)
+
+2lemetry did not have the example of subscribing which was provided by Pubnub and made my life easy.

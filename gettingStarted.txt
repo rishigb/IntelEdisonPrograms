@@ -53,6 +53,16 @@ $ python
 This should open up python 2.7 that comes pre-installed with the edison (I know I love it too!)
 
 import mraa #Press enter after this, is there is no error/response about no module present, you are good to go, otherwise this has not been installed, repeat the above process for the same.
+############# NODE installation #########
+Incase you want to work with node, you will first have to install that too.I have not tested it yet but, Intel IOT XDK takes care of it mostly or atleast that is what they say ,to install node do the following:
+
+get the binary/source file using :
+$ curl -OL http://nodejs.org/dist/v0.12.0/node-v0.12.0-linux-x86.tar.gz 
+unpack this using
+$ tar -xvf node(presstab here or the filename itself)
+$ cd nodeFileName 
+
+The reademe file in the node folder will guide you furthur, in case 
 
 More on how to install the modules is written in the Modules folder. 
 
