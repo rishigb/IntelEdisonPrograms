@@ -20,3 +20,6 @@ You need a local broker moquitto in my case to test things , generate your own k
 MAC OS X for some reason was not able to run the moquitto broker, it works fine on windows for now. You need to run the broker locally so that most of work can be done and tested at all times without exposing your data to an external entity.
 
 If your network does not allow HTTPS connections for some reason specially at workplaces, I would request you to connected your edison to some other network to test the publish and subscribe functions.
+
+##Update ##
+Going to try installing the broker on edison and test if I can run it all locally will keep you updated on that.
