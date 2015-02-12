@@ -13,3 +13,10 @@ So I had successfully made the things work using intel edison and the 2lemetry b
 So the basic example that has been provided by PubNub was just tested. Here the publish/subscribe keys have been generated using Mosquitto (I think)
 
 2lemetry did not have the example of subscribing which was provided by Pubnub and made my life easy.
+
+
+Warning:
+You need a local broker moquitto in my case to test things , generate your own keys, username etc. If you are just planning to use mqtt for testing purpose ,you can use the one provided by PUBNUB. Since I did not want to expose data, I am trying to install mosquitto on my MAC device.
+MAC OS X for some reason was not able to run the moquitto broker, it works fine on windows for now. You need to run the broker locally so that most of work can be done and tested at all times without exposing your data to an external entity.
+
+If your network does not allow HTTPS connections for some reason specially at workplaces, I would request you to connected your edison to some other network to test the publish and subscribe functions.
