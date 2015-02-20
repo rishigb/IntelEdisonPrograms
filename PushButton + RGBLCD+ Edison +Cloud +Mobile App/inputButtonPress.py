@@ -7,9 +7,9 @@ import time
 #Products
 plist = ["sugar","flour","salt","toilet paper","tooth-paste","mouth-wash"]
 
-#Buttons
+#Buttons This is now a redundant step because its not going to be used anymore.
 x = mraa.Aio(0)
-
+y = mraa.Aio(1)
 #display lcd code
 lcdDisplay= lcd.Jhd1313m1(0,0X3E,0X62)
 
@@ -79,7 +79,10 @@ def cloudPost(cmd):
 
 
 while True:
-    #lcdValprint(raw_input('Enter some text here ')) # Using this we can display
-    checkButtonInp (0,pList[0])
-    checkButtonInp (1,pList[1])
-
+         #lcdValprint(raw_input('Enter some text here ')) # Using this we can di
+        checkButtonInp (0,plist[3])
+        checkButtonInp(1,plist[1])
+        checkButtonInp(2,plist[0])
+        checkButtonInp(3,plist[2])
+        #Similarly we can send various other things to the list
+        #by adding more buttons
