@@ -58,8 +58,7 @@ def checkButtonInp (buttonNumber, product):
                 print "Still waiting"
 
 #Function to send some values to the cloud
-link= "https://secure-anchorage-4352.herokuapp.com/number"
-#link  = "http://localhost:3000/number"
+link  = "http://localhost:3000/number"
 def postRequest(inp):
     headers = {'content-type': 'application/json'} #All this mentioned in th
         r = requests.post(link,data=json.dumps(inp),headers = headers)

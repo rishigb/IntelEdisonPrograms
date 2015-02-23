@@ -1,4 +1,4 @@
-# IntelEdisonPrograms
+# IntelEdisonPrograms using Python
 
 The above code has been written and tested on Intel Edison, the powerful product from Intel. 
 I am using the grove sensor kit which is equipped with various sensors and the LCDs used above are RGB LCDs and have I2C connections.
