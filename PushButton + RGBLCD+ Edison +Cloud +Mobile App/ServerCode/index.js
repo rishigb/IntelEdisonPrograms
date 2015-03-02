@@ -16,6 +16,17 @@ var options = {
     config: opt
 }
 
+/*Cross origin resource sharing */
+var header ={
+"Access-Control-Allow-Origin":"http://localhost:3000", //This can be changed to another link or * for allowing all connections.
+"Access-Control-Allow-Methods":"GET,PUT,POST,DELETE",
+"Access-Control-Allow-Headers":"Content-Type"
+};
+
+rest.setHeaders(header);
+
+
+
 var flag_same = "0" //The data is not the same
 
 
