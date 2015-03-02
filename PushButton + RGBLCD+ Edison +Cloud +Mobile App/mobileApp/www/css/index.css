@@ -1,0 +1,47 @@
+body{
+background-color: #FFFFFF;
+}
+.text-danger{
+text-align: center;
+}
+#help{
+border-color: #46abe0;
+
+border-radius: 30px;}
+
+#tgtlogo{
+top:15px;
+left:5px;
+position:absolute;
+height:30px;
+width:30px;
+}
+.Open{
+background-color:#FFFFFF;
+width:100%;
+height:80px;
+left:0;
+Position:relative;
+list-style: none;
+font-family: "HelveticaNeue-Light",  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-size: 25px;
+text-align: left;
+padding:28px;
+color:black;
+border:solid 1px #DB0909;
+text-align: left;
+    
+}
+.Open div{
+    color:black;
+}
+#AlertList{
+    position:relative;
+    left:0;
+    top:78px;
+    width:100%;
+    color:black;
+}
+.glyphicon-question-sign{
+    font-size:60px;
+}

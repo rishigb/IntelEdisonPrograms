@@ -1,0 +1,13 @@
+.swipable {
+    margin-bottom: 30px;
+}
+button {
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+#help{
+border-color: #46abe0;
+
+border-radius: 30px;}
