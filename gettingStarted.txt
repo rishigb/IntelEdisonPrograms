@@ -109,8 +109,9 @@ From terminal, run:
 lsof | grep usbserial
  
 If the port is in use, you will get a response like this (otherwise it will return nothing):
+‘’’
 screen    27127 Sefi    5u     CHR               18,0        0t0       605 /dev/tty.usbserial
- 
+‘’’ 
 Note the session number. In my case, it's 27127. Then run:
 screen -x 27127 (obviously use your session number from the grep)
  
