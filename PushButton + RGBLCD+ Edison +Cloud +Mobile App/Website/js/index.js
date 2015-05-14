@@ -20,23 +20,23 @@ $(document).ready(function () {
 
     function recievedevent(id) {
         $.ajax({
-            url:"http://localhost:3000",
+            url:"https://secure-anchorage-4352.herokuapp.com/bitval",
             
             type: 'GET',
-            success: recall
+            success: checkDuplicate
         })
     }
 
     function recievedevent1(id) {
         $.ajax({
-            url:"http://localhost:3000",
+            url:"https://secure-anchorage-4352.herokuapp.com/product",
             
             type: 'GET',
-            success: recall1
+            success: changeProduct
         })
     }
 
-    function recall(data) {
+    function checkDuplicate(data) {
 
         if (data == "0") {
             //call server 
@@ -55,7 +55,7 @@ $(document).ready(function () {
         }
     }
 
-    function recall1(data1) {
+    function changeProduct(data1) {
         if (data1 != "none") {
             //add to the DOM
             console.log(data1);

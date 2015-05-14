@@ -18,7 +18,7 @@ var options = {
 
 /*Cross origin resource sharing */
 var header ={
-"Access-Control-Allow-Origin":"http://localhost:3000", //This can be changed to another link or * for allowing all connections.
+"Access-Control-Allow-Origin":"*", //This can be changed to another link or * for allowing all connections.
 "Access-Control-Allow-Methods":"GET,PUT,POST,DELETE",
 "Access-Control-Allow-Headers":"Content-Type"
 };
@@ -31,7 +31,7 @@ var flag_same = "0" //The data is not the same
 
 
 
-rest.get('/number', function(){
+rest.get('/product', function(){
       return curValue;
 })
 rest.get('/bitval',function(){
@@ -40,7 +40,7 @@ rest.get('/bitval',function(){
   flag_same = "1";
   return ret;
 });
-rest.post('/number', function (err, data) {
+rest.post('/product', function (err, data) {
     if (!err) {
         console.log(data.value);
         curValue = data.value;
