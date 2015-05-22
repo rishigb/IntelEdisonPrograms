@@ -1,0 +1,13 @@
+Ofcourse, by now you guys should know that version 2 of the firmware has been released. I am downloading it now.
+By the release documents, it looks promising but then again, I am prepared for a crash again, you know because, well, Intel's first firmware did not turn out so well.
+
+Here is a link to release notes: http://download.intel.com/support/edison/sb/edison_rn_332032009.pdf 
+
+Quick update:
+1. BT seems to have been fixed. Not sure if they have written python wrappers for it though.
+2. There are still a lot of unresolved issues.
+3. Intel has also come up with Flash tool Lite which will help a lot of flashing the Edison( it is a GUI). I will not be using it though. I will be using the good old commandline on the mac to achieve the same. This is not available for Mac OS X. They said it will be launched soon.
+
+
+
+
