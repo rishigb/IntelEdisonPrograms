@@ -9,7 +9,7 @@ Use the following links to get started:
 1. https://github.com/intel-iot-devkit/mraa 
 2. https://github.com/intel-iot-devkit/upm
 3. http://iotdk.intel.com/docs/master/mraa/python/
-
+4.https://github.com/intel-iot-devkit/edison-guides/wiki 
 or just check the getting started document, there I have written the step by step process on how to get started.
 
 For installing the various modules that you will need please look into the modules folder, all the modules being used and how to install them on edison is being documented there.
