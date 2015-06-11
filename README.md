@@ -24,8 +24,8 @@ For installing the various modules that you will need please look into the modul
 
 I am trying to keep the code clean, in case there are any doubts or any explanation is needed, feel free to get in touch.
 A few things you should know before getting started. Edison gets clogged up rather easily, for example, if you have installed a lot of modules, there won't be any free space and you are going to suffer a lot trying to figure out what has gone wrong. Do see the other document to troubleshoot this.
-#Socket IO intergration coming soon
-#To Do
->1.Clean the documents
->2.Test cases
->3.Modules for python and Node
+###Socket IO intergration coming soon
+###To Do
+..*Clean the documents
+..*Test cases
+..*Modules for python and Node
